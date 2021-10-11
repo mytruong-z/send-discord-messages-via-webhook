@@ -1,5 +1,6 @@
 public function postToDiscord()
     {
+        //You can see how to get the webhookurl here: https://help.dashe.io/en/articles/2521940-how-to-create-a-discord-webhook-url
         $webhookurl = "####";
 
         $timestamp = date("c", strtotime("now"));
@@ -52,24 +53,25 @@ public function postToDiscord()
                             "value"  => "Nongdan02",
                             "inline" => false
                         ],
-                        // Field 1
+                        // Field 2
                         [
                             "name"   => "Health",
                             "value"  => "1000",
                             "inline" => false
                         ],
-                        // Field 2
+                        // Field 3
                         [
                             "name"   => "SLP",
                             "value"  => "1000",
                             "inline" => false
                         ],
-                        // Field 3
+                        // Field 4
                         [
                             "name"   => "Level Pet",
                             "value"  => "20",
                             "inline" => true
                         ],
+                        // Field 5
                         [
                             "name"   => "Rank",
                             "value"  => "1230",
@@ -80,7 +82,6 @@ public function postToDiscord()
             ]
 
         ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE );
-
 
         $ch = curl_init( $webhookurl );
         curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-type: application/json'));
